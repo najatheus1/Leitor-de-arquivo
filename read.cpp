@@ -24,9 +24,9 @@ int main(void)
 	ReadFile(file, testee, size_file, NULL, NULL);
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
-		if (count >= 15) {
-			for (std::size_t j = 15; j > 0; --j) {
-				if (j == 15) {
+		if (count >= 10) {
+			for (std::size_t j = 10; j > 0; --j) {
+				if (j == 10) {
 					std::cout << " <";
 				}
 
