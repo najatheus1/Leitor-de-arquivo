@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <iostream>
+#include <format>
 
 int main(void)
 {
@@ -22,13 +23,13 @@ int main(void)
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
 		count_ = count_ + 1;
-		if (count_ >= 5) {
-			std::cout << " ";
+		if (count_ >= 2) {
+			std::cout << "  ";
 			count_ = 0;
 		}
 
-		if (count >= 20) {
-			for (std::size_t j = 0; j <= 20; ++j) {
+		if (count >= 10) {
+			for (std::size_t j = 0; j <= 10; ++j) {
 				if (j == 0) {
 					std::cout << " |";
 				}
@@ -39,7 +40,7 @@ int main(void)
 			std::cout << std::endl;
 		}
 
-		std::cout << (int)testee[i];
+		std::cout << "|" << std::format("{:#x}", (int)testee[i]) << "|";
 	}
 
 	SetConsoleTitle("Arquivo lido");
