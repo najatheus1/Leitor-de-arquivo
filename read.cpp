@@ -15,14 +15,16 @@ int main(void)
 	std::system("cls");
 	SetConsoleTitle("Lendo arquivo");
 
-	int size_file = GetFileSize(file, NULL), count = 0;
+	int size_file = GetFileSize(file, NULL), count = 0, count_ = 0;
 	char * testee = new char [size_file];
 
 	ReadFile(file, testee, size_file, NULL, NULL);
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
-		if (i >= 1) {
-			std::cout << "|";
+		count_ = count_ + 1;
+		if (count_ >= 5) {
+			std::cout << " ";
+			count_ = 0;
 		}
 
 		if (count >= 20) {
@@ -33,8 +35,8 @@ int main(void)
 
 				std::cout << testee[i - j];
 			}
-			std::cout << "|" << std::endl;
 			count = 0;
+			std::cout << std::endl;
 		}
 
 		std::cout << (int)testee[i];
