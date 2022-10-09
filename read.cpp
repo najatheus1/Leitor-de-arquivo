@@ -18,18 +18,12 @@ int main(void)
 	std::system("cls");
 	SetConsoleTitle("Lendo arquivo");
 
-	int size_file = GetFileSize(file, NULL), count = 0, count_ = 0;
+	int size_file = GetFileSize(file, NULL), count = 0;
 	char * testee = new char [size_file];
 
 	ReadFile(file, testee, size_file, NULL, NULL);
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
-		count_ = count_ + 1;
-		if (count_ >= 4) {
-			std::cout << "  ";
-			count_ = 0;
-		}
-
 		if (count >= 15) {
 			for (std::size_t j = 15; j > 0; --j) {
 				if (j == 15) {
