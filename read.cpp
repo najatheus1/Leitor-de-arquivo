@@ -30,19 +30,20 @@ int main(void)
 			count_ = 0;
 		}
 
-		if (count >= 10) {
-			for (std::size_t j = 10; j > 0; --j) {
-				if (j == 0) {
-					std::cout << " |";
+		if (count >= 15) {
+			for (std::size_t j = 15; j > 0; --j) {
+				if (j == 15) {
+					std::cout << " <";
 				}
 
 				std::cout << testee[i - j];
 			}
+			std::cout << ">";
 			count = 0;
 			std::cout << std::endl;
 		}
 
-		std::cout << "|" << std::format("{:#x}", (int)testee[i]) << "|";
+		std::cout << " | " << std::format("{:#x}", (int)testee[i]) << " | ";
 	}
 
 	SetConsoleTitle("Arquivo lido");
