@@ -10,6 +10,8 @@ int main(void)
 
 	HANDLE file = CreateFile(name_file, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (file== INVALID_HANDLE_VALUE) {
+		std::cout << "Esse arquivo nao existe" << std::endl;
+		std::system("pause");
 		return 0;
 	}
 
@@ -23,13 +25,13 @@ int main(void)
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
 		count_ = count_ + 1;
-		if (count_ >= 2) {
+		if (count_ >= 4) {
 			std::cout << "  ";
 			count_ = 0;
 		}
 
 		if (count >= 10) {
-			for (std::size_t j = 0; j <= 10; ++j) {
+			for (std::size_t j = 10; j > 0; --j) {
 				if (j == 0) {
 					std::cout << " |";
 				}
