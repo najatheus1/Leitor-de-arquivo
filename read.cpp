@@ -30,7 +30,7 @@ int main(void)
 		}
 
 		dd = (int)testee[i];
-		std::cout << " \033[1;32m| \033[1;36m" << std::format("{:#x}", abs(dd)) << " \033[1;32m| " << "\033[1;31m(" << testee[i] << ")\033[1;32m";
+		std::cout << " \033[1;36m| \033[1;32m" << std::format("{:#x}", abs(dd)) << " \033[1;36m| " << "\033[1;31m(" << testee[i] << ")\033[1;36m";
 	}
 
 	SetConsoleTitle("Arquivo lido");
