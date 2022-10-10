@@ -18,26 +18,19 @@ int main(void)
 	std::system("cls");
 	SetConsoleTitle("Lendo arquivo");
 
-	int size_file = GetFileSize(file, NULL), count = 0;
+	int size_file = GetFileSize(file, NULL), count = 0, dd = 0;
 	char * testee = new char [size_file];
 
 	ReadFile(file, testee, size_file, NULL, NULL);
 	for (std::size_t i = 0; i <= size_file - 1; ++i) {
 		count = count + 1;
 		if (count >= 10) {
-			for (std::size_t j = 10; j > 0; --j) {
-				if (j == 10) {
-					std::cout << " <";
-				}
-
-				std::cout << testee[i - j];
-			}
-			std::cout << ">";
 			count = 0;
 			std::cout << std::endl;
 		}
 
-		std::cout << " | " << std::format("{:#x}", (int)testee[i]) << " | ";
+		dd = (int)testee[i];
+		std::cout << " \033[1;32m| \033[1;36m" << std::format("{:#x}", abs(dd)) << " \033[1;32m| " << "\033[1;31m(" << testee[i] << ")\033[1;32m";
 	}
 
 	SetConsoleTitle("Arquivo lido");
